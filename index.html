@@ -25,7 +25,24 @@
 		
 </head> 
 <body> 
-
+<div data-role="page" id="login">
+	<div data-role="header">
+		<h1>Log in</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="e">
+        <li data-role="list-divider" >Iniciar Sesion</li>
+        <li><input type="email" id="regEmail" placeholder="Correo Electrónico"/></li>
+        <li><input type="password" id="regContra" placeholder="Contraseña"/></li>
+        </ul>		
+        <a href="#" data-role="button" id="regEntrar" data-theme="a">Ingresar</a>
+       <ul data-role="listview" data-inset="true" data-dividertheme="a">
+       <li data-role="list-divider" > No estas Registrado? </li>
+       <li> <a href="#registrar"  id="reg" data-theme="a">Registrar</a></li>
+        <li><a href="#" id="regFb" data-theme="a" onclick="login()">Registrar con Facebook</a></li>
+        </ul>
+	</div>	
+</div>
 <div data-role="page" id="page" data-theme="c">
 	<div data-role="header">
 		<h1>Secret Santa</h1>
@@ -65,24 +82,6 @@
 	
 </div>
 
-<div data-role="page" id="login">
-	<div data-role="header">
-		<h1>Log in</h1>
-	</div>
-	<div data-role="content">	
-		<ul data-role="listview" data-inset="true" data-dividertheme="e">
-        <li data-role="list-divider" >Iniciar Sesion</li>
-        <li><input type="email" id="regEmail" placeholder="Correo Electrónico"/></li>
-        <li><input type="password" id="regContra" placeholder="Contraseña"/></li>
-        </ul>		
-        <a href="#" data-role="button" id="regEntrar" data-theme="a">Ingresar</a>
-       <ul data-role="listview" data-inset="true" data-dividertheme="a">
-       <li data-role="list-divider" > No estas Registrado? </li>
-       <li> <a href="#registrar"  id="reg" data-theme="a">Registrar</a></li>
-        <li><a href="#" id="regFb" data-theme="a" onclick="login()">Registrar con Facebook</a></li>
-        </ul>
-	</div>	
-</div>
 <div data-role="page" id="registrar" data-theme="b">
 	<div data-role="header">
 		<h1>Registro</h1>

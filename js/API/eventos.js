@@ -2,8 +2,9 @@
 $(document).ready(function(){
 	document.addEventListener("deviceready",function(){
 		if(!isLogin())
+		{
 		window.location.href='#login';
-		
+		}
 	$('#regEnviar').tap(function(){
 		var nom=$('#regNom').val();
 		var email=$('#regEmail').val();
