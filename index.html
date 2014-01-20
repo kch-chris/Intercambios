@@ -1,0 +1,166 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Secret Santa 1.0</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+<link href="css/santa-theme.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+<script src="phonegap.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+<script src="js/API/eventos.js" type="text/javascript"></script>
+<script src="js/API/servidor.js" type="text/javascript"></script>
+<script src="js/API/dispositivo.js" type="text/javascript"></script>
+<script src="js/API/captura.js" type="text/javascript"></script>
+<script src="js/API/archivos.js" type="text/javascript"></script>
+<script src="js/API/almacenamiento.js" type="text/javascript"></script>
+<script src="cordova.js"></script>
+	    <!-- cordova facebook plugin -->
+		<script src="facebook_connect/www/cdv-plugin-fb-connect.js"></script>
+	    <!-- facebook js sdk -->
+		<script src="facebook_connect/www/facebook-js-sdk.js"></script>
+ <script src="js/API/facebook.js" type="text/javascript"></script>       
+		
+</head> 
+<body> 
+
+<div data-role="page" id="page" data-theme="c">
+	<div data-role="header">
+		<h1>Secret Santa</h1>
+	</div>
+	<div data-role="content" data-theme="c">	
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#nr1">Nuevo Sorteo</a></li>
+            <li><a href="#historial">Ver Sorteos</a></li>
+			<li><a href="#priv">Privacidad</a></li>
+		</ul>		
+	</div>
+	<div data-role="footer" data-position="fixed" >
+    <a href="#nosotros"data-role="button" data-transition="slideup" data-theme="b">Nosotros</a>
+    <span style="font: 8pt Arial;">Todos los Derechos Reservados &copy;</span>
+	</div>
+</div>
+
+<div data-role="page" id="nosotros">
+	<div data-role="header">
+		<h1>Nosotros</h1>
+        <a data-direction="reverse" data-rel="back" >Atras</a>
+	</div>
+	<div data-role="content" style="text-align:justify;">	
+		Somos una organización que busca la evolución de las pequeñas, medianas y grandes empresas facilitando recursos tecnológicos amigables  y personalizados para los usuarios, así como soluciones administrativas integrales para su crecimiento y desarrollo.		
+	</div>
+	
+</div>
+
+<div data-role="page" id="priv">
+	<div data-role="header">
+    <a data-role="button" data-rel="back" data-direction="reverse">Atras</a>
+		<h1>Privacidad</h1>
+	</div>
+	<div data-role="content" style="text-align:justify;">	
+		En Nuvem Pensamos en Ti.		
+	</div>
+	
+</div>
+
+<div data-role="page" id="login">
+	<div data-role="header">
+		<h1>Log in</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="e">
+        <li data-role="list-divider" >Iniciar Sesion</li>
+        <li><input type="email" id="regEmail" placeholder="Correo Electrónico"/></li>
+        <li><input type="password" id="regContra" placeholder="Contraseña"/></li>
+        </ul>		
+        <a href="#" data-role="button" id="regEntrar" data-theme="a">Ingresar</a>
+       <ul data-role="listview" data-inset="true" data-dividertheme="a">
+       <li data-role="list-divider" > No estas Registrado? </li>
+       <li> <a href="#registrar"  id="reg" data-theme="a">Registrar</a></li>
+        <li><a href="#" id="regFb" data-theme="a" onclick="login()">Registrar con Facebook</a></li>
+        </ul>
+	</div>	
+</div>
+<div data-role="page" id="registrar" data-theme="b">
+	<div data-role="header">
+		<h1>Registro</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="b">
+        <li data-role="list-divider" >Nuevo Usuario</li>
+        <li><input type="text" id="regNom" placeholder="Nombre" /></li>
+        <li><input type="email" id="regEmail" placeholder="Correo Electrónico"/></li>
+        <li><input type="password" id="regContra" placeholder="Contraseña"/></li>
+        <li><input type="password" id="regContra1" placeholder="Confirmar Contraseña"/></li>
+        </ul>		
+        <a href="#" data-role="button" id="regEnviar" data-theme="a">Registrar</a>
+	</div>	
+</div>
+
+<div data-role="page" id="historial">
+    <div data-role="header">
+    <h1>Personas</h1>
+    <a data-role="button" data-rel="back" data-direction="reverse">Atras</a>
+    </div>
+    <div data-role="content">
+    
+    </div>
+     <div  data-role="footer" data-position="fixed">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#nosotros" data-transition="pop" data-icon="info">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a href="#nr1" data-transition="fade" data-icon="grid">
+                        Reservar
+                    </a>
+                </li>
+                <li>
+                    <a href="#priv" data-transition="flip" data-icon="star">
+                        Privacidad
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="nr2" data-theme="b">
+	<div data-role="header">
+		<h1>Nuevo Sorteo</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="a">
+        <li data-role="list-divider" >Sorteo</li>
+        <li><input type="number" id="regID" placeholder="Id"/> </li>
+        <li><input type="text" id="regNom" placeholder="Nombre" /></li>
+        <li><input type="email" id="regEmail" placeholder="Correo Electrónico"/></li>
+        </ul>	
+         <a href="#" data-role="button" data-theme="a">Siguiente</a>	
+      </div>	
+</div>
+<div data-role="page" id="nr1" data-theme="c">
+	<div data-role="header">
+		<h1>Nuevo Sorteo</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="a">
+        <li data-role="list-divider" >Datos del Sorteo</li>
+        <li>No. Personas:<br/><select >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select></li>
+       
+        </ul>		
+        <a href="#" data-role="button" data-theme="a">Siguiente</a>
+      </div>	
+</div>
+</body>
+</html>
