@@ -25,6 +25,10 @@
 	<feature name="http://api.phonegap.com/1.0/file"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/notification"/>
+	
+	<feature name="org.apache.cordova.facebook.Connect">
+    <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+	</feature>
 
     <!--
         If you do not want any permissions to be added to your app, add the
@@ -54,6 +58,11 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" >
+	 <param name="APP_ID" value="206152916238393" />
+  	<param name="APP_NAME" value="Secret Santa" />
+	</gap:plugin>
+
 
     <!-- Define app icon for each platform. -->
     <icon src="images/icon.png" />
