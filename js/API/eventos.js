@@ -1,10 +1,10 @@
 // Eventos
 $(document).ready(function(){
 	document.addEventListener("deviceready",function(){
-		/*if(!isLogin())
+		if(!isLogin())
 		{
 		window.location.href='#login';
-		}*/
+		}
 		
 	$('#regEnviar').on("tap",function(){
 		var nom=$('#regNom').val();
