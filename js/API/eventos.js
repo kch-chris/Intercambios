@@ -1,5 +1,5 @@
 // Eventos
-$(document).ready(function(){
+$(document).on("pageinit",function(){
 	document.addEventListener("deviceready",function(){
 		if(!isLogin())
 		{
